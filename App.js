@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {View, Text, TextInput, Button} from 'react-native';
-import styles from './ClubConnection';
+import styles from '../styles/ClubConnection.css';
 
 const App = () => {
   const [connectMethod, setConnectMethod] = useState('');
