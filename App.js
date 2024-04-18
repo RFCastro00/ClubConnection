@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {View, Text, TextInput, Button} from 'react-native';
+import styles from './ClubConnection';
 
 const App = () => {
   const [connectMethod, setConnectMethod] = useState('');
@@ -17,24 +18,16 @@ const App = () => {
   };
 
   return (
-    <View style={{padding: 20}}>
-      <Text
-        style={{
-          fontSize: 20,
-          fontWeight: 'bold',
-          color: 'black',
-          textAlign: 'center',
-        }}>
-        Club Connection
-      </Text>
+    <View style={styles.container}>
+      <Text style={styles.title}>Club Connection</Text>
       <TextInput
-        style={{marginVertical: 10, borderWidth: 1, padding: 5}}
+        style={styles.textInput}
         placeholder="Enter Connect Method"
         onChangeText={text => setConnectMethod(text)}
         value={connectMethod}
       />
       <TextInput
-        style={{marginVertical: 10, borderWidth: 1, padding: 5}}
+        style={styles.textInput}
         placeholder="Enter Number"
         keyboardType="numeric" // Set keyboard to accept numbers
         onChangeText={text => setNumber(text)}
@@ -46,8 +39,8 @@ const App = () => {
         disabled={!connectMethod || !number}
       />
       {saved && (
-        <View style={{marginTop: 10}}>
-          <Text style={{color: 'green'}}>Data saved successfully!</Text>
+        <View style={styles.successMessage}>
+          <Text>Data saved successfully!</Text>
           <Text>Saved Connect Method: {savedConnectMethod}</Text>
           <Text>Saved Number: {savedNumber}</Text>
         </View>
